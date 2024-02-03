@@ -77,7 +77,7 @@ def get_guessed_word(secret_word, letters_guessed):
       which letters in secret_word have been guessed so far.
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    #pass
     blueString = ''
     for char in secret_word:
         if char in letters_guessed:
@@ -85,10 +85,6 @@ def get_guessed_word(secret_word, letters_guessed):
         else:
             blueString = blueString + '_ '
     return blueString
-
-#w = 'apple'
-#le = ['e', 'i', 'k', 'p', 'r', 's']
-#print(get_guessed_word(w,le))
 
 
 
@@ -99,7 +95,17 @@ def get_available_letters(letters_guessed):
       yet been guessed.
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    #pass
+    whiteString = string.ascii_lowercase
+    blueString = ''
+    for char in whiteString:
+        if char not in letters_guessed:
+            blueString = blueString + char
+    return blueString
+
+#w = 'apple'
+#le = ['e', 'i', 'k', 'p', 'r', 's']
+#print(get_available_letters(le))
     
     
 
