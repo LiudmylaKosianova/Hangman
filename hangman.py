@@ -61,7 +61,13 @@ def is_word_guessed(secret_word, letters_guessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    #pass
+    for char in secret_word:
+        if char  not in letters_guessed:
+            return False
+    return True
+        
+      
 
 
 
