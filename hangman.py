@@ -67,8 +67,6 @@ def is_word_guessed(secret_word, letters_guessed):
             return False
     return True
         
-      
-
 
 
 def get_guessed_word(secret_word, letters_guessed):
@@ -80,6 +78,13 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
     pass
+    blueString = ''
+    for char in secret_word:
+        if char in letters_guessed:
+            blueString = blueString + char
+        else:
+            blueString = blueString + '_ '
+    return blueString
 
 
 
