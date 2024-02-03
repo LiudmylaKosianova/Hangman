@@ -86,6 +86,10 @@ def get_guessed_word(secret_word, letters_guessed):
             blueString = blueString + '_ '
     return blueString
 
+#w = 'apple'
+#le = ['e', 'i', 'k', 'p', 'r', 's']
+#print(get_guessed_word(w,le))
+
 
 
 def get_available_letters(letters_guessed):
