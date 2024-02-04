@@ -103,10 +103,7 @@ def get_available_letters(letters_guessed):
             blueString = blueString + char
     return blueString
 
-#w = 'apple'
-#le = ['e', 'i', 'k', 'p', 'r', 's']
-#print(get_available_letters(le))
-    
+   
     
 
 def hangman(secret_word):
@@ -135,7 +132,19 @@ def hangman(secret_word):
     Follows the other limitations detailed in the problem write-up.
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    #pass
+    print('Welcome to the game Hangman!')
+    
+    guesses = 6
+    warnings = 3
+    print('I am thinking of a word that is ', len(secret_word), ' letters long.')
+    print('-------------')
+    print('You have ', guesses, ' guesses left.')
+    print('Available letters: ', string.ascii_lowercase)
+
+secret_word = 'sofa'
+hangman(secret_word)
+
 
 
 
@@ -217,13 +226,13 @@ def hangman_with_hints(secret_word):
 
 
 if __name__ == "__main__":
-    # pass
+     pass
 
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
     
-    secret_word = choose_word(wordlist)
-    hangman(secret_word)
+    #secret_word = choose_word(wordlist)
+    #hangman(secret_word)
 
 ###############
     
