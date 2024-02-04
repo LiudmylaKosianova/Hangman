@@ -133,14 +133,38 @@ def hangman(secret_word):
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
     #pass
-    print('Welcome to the game Hangman!')
+    
     
     guesses = 6
     warnings = 3
+    letters_guessed = []
+    vowels = ['a', 'e', 'o', 'i', 'u']
+    print('Welcome to the game Hangman!')
     print('I am thinking of a word that is ', len(secret_word), ' letters long.')
     print('-------------')
     print('You have ', guesses, ' guesses left.')
     print('Available letters: ', string.ascii_lowercase)
+
+    can_play = True
+
+    while can_play:
+        letter = input('Please guess a letter: ')
+        letters_guessed.append(letter)
+        if letter in secret_word:
+            print('Good guess: ', get_guessed_word(secret_word, letters_guessed))
+            print('-----------')
+        else:
+            guesses -= 1
+            print('Oops! That letter is not in my word.')
+            print('Please guess a letter: ', get_guessed_word(secret_word, letters_guessed))
+        if guesses == 0:
+            can_play = False
+            print('Sorry, you ran out of guesses. The word was ', secret_word)
+
+
+  
+
+
 
 secret_word = 'sofa'
 hangman(secret_word)
