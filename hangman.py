@@ -187,19 +187,21 @@ def hangman(secret_word):
           print('Congratulations, you won!')
           break
       else:
+        print('Oops! That letter is not in my word: ', get_guessed_word(secret_word, letters_guessed))
         if letter in vowels:
           guesses-=2
         else:
           guesses -=1
-          print('Oops! That letter is not in my word: ', get_guessed_word(secret_word, letters_guessed))
+        
       if guesses <= 0:
         can_play = False
+        print('----------')
         print('Sorry, you ran out of guesses. The word was ', secret_word)
  
 
 
-secret_word = 'tact'
-hangman(secret_word)
+#secret_word = 'else'
+#hangman(secret_word)
 
 
 
@@ -282,13 +284,13 @@ def hangman_with_hints(secret_word):
 
 
 if __name__ == "__main__":
-     pass
+     #pass
 
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
     
-    #secret_word = choose_word(wordlist)
-    #hangman(secret_word)
+    secret_word = choose_word(wordlist)
+    hangman(secret_word)
 
 ###############
     
