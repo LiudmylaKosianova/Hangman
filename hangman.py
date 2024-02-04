@@ -149,14 +149,38 @@ def hangman(secret_word):
 
     while can_play:
         letter = input('Please guess a letter: ')
+
+        if not letter.isalpha():
+          #check the warnings
+          print('Oops! That is not a valid letter.')
+          if warnings > 0:
+              warnings -= 1
+              print('You have ', warnings, ' warnings left: ', get_guessed_word(secret_word, letters_guessed))
+              continue
+          else:
+              guesses -= 1
+              print('You have no warnings left, so you lose one guess: ', get_guessed_word(secret_word, letters_guessed))
+              continue
+        
+        letter.lower()
+
+        if letter in letters_guessed:
+            print('Oops! You have already guessed that letter.')
         letters_guessed.append(letter)
+            
         if letter in secret_word:
             print('Good guess: ', get_guessed_word(secret_word, letters_guessed))
-            print('-----------')
         else:
-            guesses -= 1
-            print('Oops! That letter is not in my word.')
-            print('Please guess a letter: ', get_guessed_word(secret_word, letters_guessed))
+            if letter in vowels:
+                guesses-=2
+            else:
+                guesses -=1
+            print('Oops! That letter is not in my word: ', get_guessed_word(secret_word, letters_guessed))
+
+        print('-----------')
+        print('You have ', guesses, ' guesses left.')
+        print('Available letters: ', get_available_letters(letters_guessed))
+
         if guesses == 0:
             can_play = False
             print('Sorry, you ran out of guesses. The word was ', secret_word)
