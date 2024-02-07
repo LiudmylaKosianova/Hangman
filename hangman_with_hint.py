@@ -226,16 +226,24 @@ def match_with_gaps(my_word, other_word):
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
     #pass
-    if len(my_word) != len(other_word):
+    my_word_2 = ''
+    for char in my_word:
+       if char != ' ':
+          my_word_2 = my_word_2 + char    
+
+
+    if len(my_word_2) != len(other_word):
+        
        return False
     
-    for i in range (len(my_word)):
-       if my_word[i].isalpha and (my_word[i] != other_word[i]):
+    for i in range (len(my_word_2)):
+       if (my_word_2[i] != '_') and (my_word_2[i] != other_word[i]):
+           
           return False
     
     list1 = []
-    for char in my_word:
-       if char.isalpha:
+    for char in my_word_2:
+       if char != '_':
           list1.append(char)
     
     list2 = []
@@ -252,7 +260,7 @@ def match_with_gaps(my_word, other_word):
     
     letter_count2 = {}
     for char in list2:
-        if char in letter_count1:
+        if char in letter_count2:
           letter_count2[char] += 1
         else:
           letter_count2[char] = 1
@@ -262,7 +270,8 @@ def match_with_gaps(my_word, other_word):
            
     return True
 
-
+print(match_with_gaps('a_ _ le', 'apple'))#should be true
+print(match_with_gaps('a_ ple', 'apple'))#should be false
 
 
 
@@ -320,13 +329,13 @@ def hangman_with_hints(secret_word):
 
 
 if __name__ == "__main__":
-     #pass
+    pass
 
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
     
-    secret_word = choose_word(wordlist)
-    hangman(secret_word)
+    #secret_word = choose_word(wordlist)
+    #hangman(secret_word)
 
 ###############
     
