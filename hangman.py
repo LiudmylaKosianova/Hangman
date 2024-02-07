@@ -199,11 +199,10 @@ def hangman(secret_word):
         print('Sorry, you ran out of guesses. The word was ', secret_word)
  
 
-
 if __name__ == "__main__":
-     #pass
+    #pass
 
-    # To test part 2, comment out the pass line above and
+    # To test hangman comment out the pass line above and
     # uncomment the following two lines.
     
     secret_word = choose_word(wordlist)
