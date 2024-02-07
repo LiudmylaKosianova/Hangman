@@ -233,10 +233,36 @@ def match_with_gaps(my_word, other_word):
        if my_word[i].isalpha and (my_word[i] != other_word[i]):
           return False
     
-       
+    list1 = []
+    for char in my_word:
+       if char.isalpha:
+          list1.append(char)
+    
+    list2 = []
+    for char in other_word:
+       if char in list1:
+          list2.append(char)
+    
+    letter_count1 = {}
+    for char in list1:
+        if char in letter_count1:
+          letter_count1[char] += 1
+        else:
+          letter_count1[char] = 1
+    
+    letter_count2 = {}
+    for char in list2:
+        if char in letter_count1:
+          letter_count2[char] += 1
+        else:
+          letter_count2[char] = 1
+    
+    if letter_count1 != letter_count2:
+       return False
+           
     return True
 
-     
+
 
 
 
