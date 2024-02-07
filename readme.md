@@ -1,4 +1,4 @@
-#Hangman word game
+# Hangman word game
 
 
 hangman output
