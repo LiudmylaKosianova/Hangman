@@ -270,9 +270,7 @@ def match_with_gaps(my_word, other_word):
            
     return True
 
-print(match_with_gaps('a_ _ le', 'apple'))#should be true
-print(match_with_gaps('a_ ple', 'apple'))#should be false
-
+ 
 
 
 def show_possible_matches(my_word):
@@ -286,9 +284,20 @@ def show_possible_matches(my_word):
 
     '''
     # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    #pass
 
+    matches = False
 
+    for word in wordlist:
+       if match_with_gaps(my_word, word):        
+          print(word, end = ' ')
+          matches = True
+    if not matches:
+       print('No matches found')
+
+show_possible_matches('t _ _ t')
+print('---------')
+show_possible_matches('abbbb_')
 
 def hangman_with_hints(secret_word):
     '''
