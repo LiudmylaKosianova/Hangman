@@ -1,4 +1,5 @@
 from hangman_with_hint import match_with_gaps
+from hangman_with_hint import get_guessed_word
 
 def test_match_with_gaps():
     assert match_with_gaps('a_ _ le', 'apple')
@@ -20,3 +21,13 @@ def test_match_with_gaps_double_letters():
     assert match_with_gaps('su _ _ ess', 'success')
     assert not match_with_gaps('g_ _ l', 'gull')
     assert match_with_gaps('g _ ll', 'gull')
+
+def test_get_guessed_word():
+    listG = ['a','e']
+    assert get_guessed_word('apple', listG) == 'a_ _ _ e'
+    listG.append('p')
+    assert get_guessed_word('apple', listG) == 'app_ e'
+    listG.append('l')
+    assert get_guessed_word('apple', listG) == 'apple'
+
+
